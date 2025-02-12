@@ -35,7 +35,7 @@ public class ScannerExample1 {
 		// 조작해야함
 		// Scanner sc = new Scanner(System.in) -> 요거는 좀 기억해두자
 		
-		
+		// 아에
 	
 	
 		
