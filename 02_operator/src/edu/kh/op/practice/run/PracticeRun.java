@@ -7,8 +7,10 @@ public class PracticeRun {
 	public static void main(String[] args) {
 		// 
 		
+		
+		
 		 OpPractice op = new OpPractice();
-         op.practice3();
+         op.practice1();
 	}
 
 }
