@@ -6,7 +6,7 @@ public class VariableExample2 {
 		
 		
 		/*
-		 * 자바 기본 자료형
+		 * 자바 기본 자료형 
 		 * 
 		 * 논리형 : boolean ( 1byte)
 		 * 정수형 : byte(1byte), short(2byte), int(4byte), long(8byte) 
