@@ -1,7 +1,8 @@
 package edu.kh.op.ex;
 
+import java.util.Scanner;
 
-  // 예제 코드 작성용 클래스( 기능용 /메서드용)
+// 예제 코드 작성용 클래스( 기능용 /메서드용)
  
 	public class OpExample {
 	 
@@ -134,7 +135,54 @@ package edu.kh.op.ex;
 		
 		}
 			
+		public void ex4() {
+
+//삼항 연산자 : 조건식 ? true 일때 수행될값 : false 일때 수행될 값.
+		// * 조건식 : 연산결과가 t/f 인 식	
+			
+			int num = 30;
+			
+			// num 이 30보다 크면(초과) "num 은 30보다 큰수이다"
+			//   아니면 "num 은 30 이하의 수이다" 출력
+      String result = num > 30 ? "num 은 30보다 큰수이다" : "num 은 30 이하의 수이다" ;
+			
+          // 조건문 먼저 쓰고 
+          // 출력할값 "" 을 씀  "어쩌구" : "저쩌구"
+         // 앞에 String result = 
+         // 이걸 출력하면됨
 		
+      
+      System.out.println(result);
+			
+			// 입력 받은 정수가 음수인지 양수인지 구분
+            // 단, 0은 양수로 처리
+	       
+            // Scanner 생성
+          
+            //ex) 
+            //정수 입력 : 4
+            // 양수 입니다. 
+            // 정수 입력 : -5 
+            // 음수 입니다.
+            
+      Scanner sc = new Scanner(System.in);
+      
+          
+      System.out.print("정수 입력 : ");
+      
+      int input = sc.nextInt();
+       // 난 왜 이게 기억이 안나지 ..
+       
+      String result2 = input >= 0 ? "양수 입니다." : "음수 입니다.";
+      
+      System.out.println(result2);      
+      
+      System.out.println("------------");
+      
+		
+		
+		
+		}
 		
 		
 		
