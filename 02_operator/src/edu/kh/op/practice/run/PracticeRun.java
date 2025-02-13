@@ -16,13 +16,15 @@ public class PracticeRun {
          
 		 //op.practice3();
 		
-	      //  OperatorPractice2 op2 = new OperatorPractice2();
+	       //OperatorPractice2 op2 = new OperatorPractice2();
 	        OperatorPractice3 op3 = new OperatorPractice3();
 	       //  op3.practice2();
 	         //op2.r();
+	       //  op2.ex1();
+	        op3.practice1();
 	         
-	         op3.practice3();
-	         
+	
+	
 	}
 
 }

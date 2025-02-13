@@ -37,12 +37,15 @@ public class OperatorPractice3 {
    System.out.print("멤버쉽 있으세요? (있으면 true / 없으면 false 입력) : ");
    boolean member = sc.nextBoolean();
    
-   double member = (price* 0.9) : (price * 0.95) ;
-	
+   double finalprice =member ?  (price * 0.9) : (price *0.95) ;
+   System.out.println("할인을 포함한 최종금액 : "+ finalprice);
+	 
    
    
-   
-   
+   //삼항 연산자 !! 
+   // int result = (조건식) ? (어떠한 식A : 어떠한식B  )
+   //result를 출력 하면 true 면 A 식 , false 면 b식
+                            
    
   
      

@@ -56,7 +56,7 @@ public class ConditionPractice {
 		 int ma = sc.nextInt();
 		 System.out.print("영어점수 : ");
 		 int en = sc.nextInt();
-		 String result ;
+		
 		 
 		 int total = ko + ma + en;
 		 int ev = (ko + ma + en)/3;
@@ -66,10 +66,10 @@ public class ConditionPractice {
 		 		+ "축하합니다, 합격입니다!"
 			 		,ko, ma, en ,total, ev );
 			 
-		 }else {System.out.println(total);
+		  }else {System.out.println(total);
 			 System.out.println(ev);
 			 System.out.println("불합격입니다.");}
-		 
+		  
 		 
 		 
 		 
@@ -115,7 +115,7 @@ public class ConditionPractice {
 		 * */
 		System.out.print("1~12 사이의 정수입력: ");
 	    int month = sc.nextInt();
-	    String result ;
+	 
   
 	    switch(month) {
 	    
@@ -124,13 +124,14 @@ public class ConditionPractice {
 	    case 2 : System.out.println(month+"월은 28일까지 있습니다."); break;
 	    default : System.out.println(month+"월은 잘못 입력된 달입니다. ");
 	   
-	    
-	    
-	    
-	    
-	    
-	    
 	    }
+	   
+	   
+	    
+	    
+	    
+	    
+	    
 	    
 	    
 	   }
@@ -141,10 +142,12 @@ public class ConditionPractice {
 		 *저체중/정상체중/과체중/비만을 출력하세요.
 
 			BMI = 몸무게 / (키(m) * 키(m))
-			BMI가 18.5미만일 경우 저체중 / 18.5이상 23미만일 경우 정상체중
-			BMI가 23이상 25미만일 경우 과체중 / 25이상 30미만일 경우 비만
+			BMI가 18.5미만일 경우 저체중 / 
+			18.5이상 23미만일 경우 정상체중
+			BMI가 23이상 25미만일 경우 과체중 / 
+			25이상 30미만일 경우 비만
 			BMI가 30이상일 경우 고도 비만
-
+         
 	[실행 화면]
 	키(m)를 입력해 주세요 : 1.65
 	몸무게(kg)를 입력해 주세요 : 58.4
@@ -160,28 +163,22 @@ public class ConditionPractice {
 
 	//BMI = 몸무게 / (키(m) * 키(m))
 	double bmi = weight / (height * height);
-	System.out.println("BMI wltn :"+ bmi);
+	System.out.println("BMI 지수 :"+ bmi);
 	
-	//BMI가 18.5미만일 경우 저체중 / 18.5이상 23미만일 경우 정상체중
-	//BMI가 23이상 25미만일 경우 과체중 / 25이상 30미만일 경우 비만
-	//BMI가 30이상일 경우 고도 비만
-		
 	String result ;
+	  if(bmi < 18.5) {
+		  result = "저체중";
+		  
+	  }else if (bmi < 23) {
+		  result = "정상체중";
+		  
+	  }else if (bmi < 25) {
+		  result = "과체중";
+	  }else {result = "고도 비만";
+		  
+	  }System.out.println(result);
+	
 
-	if(bmi < 18.5) {
-		result = "저체중";
-	}else if (bmi <= 23) {
-		result = "정상체중";{
-		}else if (bmi <= 25 ) {
-			result = "비만";
-		}else if () {
-		}
-			
-	}
-	
-	
-	System.out.println(result);
-		
 		
 		
 	}
@@ -228,11 +225,28 @@ public class ConditionPractice {
 		rep *= 0.3;
 		att *= 0.2;
 		
+		double total = mid+fin+rep+att;
 		
-		
-		if () {
+		if(att <= 20 * 0.7) { // 출석 만족 못했을 때 (70% 이상 출석했는지)
+			// 총 강의 횟수 : 20
+			// 결석 기준 : 0.3
+			// (1 - 0.3) = 0.7 -> 70 % 이상 출석해야한다는 의미
+			System.out.println("Fail [출석 횟수 부족] (" + (int)att + "/20)");
+			
+		} else { // 출석 만족시
+			
+			System.out.printf("중간고사점수 (20) : %.1f \n", mid );
+			System.out.printf("기말고사점수 (30) : %.1f \n", fin );
+			System.out.printf("과제점수 (30) : %.1f \n", rep );
+			System.out.printf("출석점수 (20) : %.1f \n", att );
+			
+		}if(total >= 70) {
+			System.out.println("pass");
+		}else {
+			System.out.println("점수미달");
 			
 		}
+				
 		
 		
 		
