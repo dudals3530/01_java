@@ -35,6 +35,9 @@ public class OpPractice {
 		System.out.printf("%d / %d = %d\n", input1, input2, input3);
 		System.out.println(input4);
 		
+		//Systeom.out.prfinf("1인당 사탕개수 : %d\n", input3)
+		//Systeom.out.prfinf("남는사탕개수 : %d", input4)
+		
 		
 		
 		
@@ -70,8 +73,6 @@ public class OpPractice {
   System.out.print("이름 : ");
   String name = sc.nextLine();
   
-  
-  
   System.out.print("몇학년? : ");
   int age = sc.nextInt();
   
@@ -80,8 +81,6 @@ public class OpPractice {
   
   System.out.print("몇번? : ");
   int num = sc.nextInt();
-  
- 
   
   System.out.print("남학생/여학생? : ");
   String male = sc.nextLine();
@@ -95,6 +94,11 @@ public class OpPractice {
   
   // 3학년 4반 15번 홍길동 남학생의 성적은 85.75이다.
   
+  
+  
+  
+  
+ 
  
   
   
@@ -131,10 +135,17 @@ public class OpPractice {
 	  
 	  System.out.printf("합계 : %d\n",ko+en+ma);
 	  double ev = (ko+en+ma)/3;
+	  
 	  System.out.print("평균 :"+ ev);
 	  
+	  //각 과목이 40점 이상, 평균 60점 이상 이어야 합격 
+	  // 그외 불합격 출력 
 	  
+	  boolean result = (ko >=40) && (en >= 40) && (ma >= 40) && (ev >= 60);
+	  System.out.println();
+	  System.out.println(result  ? "합격"  : "불합격");
 	  
+			
 	  
 	  
 		

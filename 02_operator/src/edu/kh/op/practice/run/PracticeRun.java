@@ -1,6 +1,7 @@
 package edu.kh.op.practice.run;
 
-import edu.kh.op.practice.OpPractice;
+import edu.kh.op.practice.OperatorPractice2;
+import edu.kh.op.practice.OperatorPractice3;
 
 public class PracticeRun {
 
@@ -9,8 +10,19 @@ public class PracticeRun {
 		
 		
 		
-		 OpPractice op = new OpPractice();
-         op.practice1();
+		// OpPractice op = new OpPractice();
+         //op.practice1();
+         //op.practice2();
+         
+		 //op.practice3();
+		
+	      //  OperatorPractice2 op2 = new OperatorPractice2();
+	        OperatorPractice3 op3 = new OperatorPractice3();
+	       //  op3.practice2();
+	         //op2.r();
+	         
+	         op3.practice3();
+	         
 	}
 
 }
