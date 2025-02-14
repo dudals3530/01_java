@@ -208,25 +208,96 @@ public class ConditionExample { // 기능 제공용 클래스
 	  System.out.print("점수 입력 : ");
 	  int score = sc.nextInt();
 	  String result ;
-	  if (score < 100 || score > 0) {result = "잘못입력하셨습니다.";} 
-	  else if (score >= 90) {result = "A";}
+	  
+	  if (score > 100 || score < 0) {result = "잘못입력하셨습니다.";} 
+	  else if (score >=90) {result = "A";}
 	  else if (score >=80) {result = "B";}
 	  else if (score >=70) {result = "C";}
 	  else if (score >=60) {result = "D";}
 	  else   {result = "F";}
+   System.out.println(result);
   }
   
- // 연습문제  -> 이거다시 고치자
+ // 연습문제  -> 다시고쳐봣음
 
 
  public void ex7() {	// 놀이기구 탑승 제한검사
 	//나이가12세 이상, 키 140.0 이상일 경우에만 "탑승가능"
 	// 나이가 12미만인 경우: "적정 연령이 아닙니다.
-	// 키가 140.0미만: "적정키가 아닙니다"
+	// 키를 0~250.0cm 사이로 입력하지 않은 경우 : "키를 잘못 입력 하셨습니다."
 	// 나이가 0세 미만, 100세 초과시 : "잘못입력하셨습니다."
 	
+	// [실행화면]
+	// 나이 입력 : 130
+	// 나이를 잘못 입력 하셨습니다
+
+	// 나이 입력 : 30
+	// 키 입력 : 300
+	// 키를 잘못 입력 하셨습니다
+
+	// 나이 입력 : 20
+	// 키 입력 : 110
+	// 나이는 적절하나, 키가 적절치 않음
+
+	// 나이 입력 : 10
+	// 키 입력 : 150
+	// 키는 적절하나, 나이가 적절치 않음
+
+	// 나이 입력 : 10
+	// 키 입력 : 110
+	// 나이와 키 모두 적절치 않음
+
+	// 나이 입력 : 15
+	// 키 입력 : 160
+	// 탑승 가능!!!
 	
 	
+	 System.out.print("나이 입력 : ");
+	 int age = sc.nextInt();
+	 
+	  if(age<0 || age >100) {System.out.println("잘못 입력하셧습니다.");}
+	  else {// 나이를 잘 입력한경우
+		  System.out.print("키입력: ");
+		  double tall = sc.nextDouble();
+		  
+		  if (tall < 0 || tall >250) {System.out.println("키를 잘못입력하셨습니다.");
+		  
+		  
+		  
+		  }else { // 키를  잘입력한경우  - > 키도 나이도 잘 입력한경우
+			  
+			  if (age >= 12 && tall <140.0) {System.out.println("나이는 적절하나, 키가 적절치 않음");}
+			  
+			  else if (age < 12 && tall >=140.0) {System.out.println( "키는 적절하나, 나이는 적절치 않음");
+			  
+			  
+			  }else if (age < 12 && tall < 140.0) {System.out.println( "나이와 키 모두 적절치 않음");
+			  
+			  }else {System.out.println("탑승 가능!!");}
+			  
+			  
+			  
+		  }
+		  
+		  
+	  } 
+	  
+	  
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 	}
 		
 		 // 다시풀어보자
@@ -318,29 +389,8 @@ public void ex8() {
 	
 		
 	
-		
-			
-		
-		
-				
-		
-	
-	
-	
-	
-     
-
-	
-
-
-
-
-  
-
-
-
 }
- // 8번 다시 풀어보자 .. 개어렵다
+// 8번 다시 풀어보자 .. 개어렵다
 
 public void ex9() {
 	//switch 문
@@ -365,6 +415,27 @@ public void ex9() {
 	
 	
 	}
+		
+			
+		
+		
+				
+		
+	
+	
+	
+	
+     
+
+	
+
+
+
+
+  
+
+
+
 	
 	
 	

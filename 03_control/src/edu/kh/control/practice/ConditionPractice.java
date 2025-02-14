@@ -17,7 +17,7 @@ public class ConditionPractice {
 		String result;
 		int int1 = sc.nextInt();
 		
-		if(int1 < 0) {
+		if(int1 > 0) {
 			
 			if(int1 % 2 !=0 ) {result = "홀수입니다.";}
 			 
@@ -26,7 +26,7 @@ public class ConditionPractice {
 			}else {result = "양수만 입력해주세요.";
 			
 		}System.out.println(result);
-	// 고치자  난 왜 항상 거꾸로하누; 
+	// 
 		
 		
 		

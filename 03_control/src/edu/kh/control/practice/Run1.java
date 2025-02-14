@@ -7,7 +7,7 @@ public class Run1 {
 				// co.practice1();
 				// co.practice2();
 		 // co.practice3();
-		  co.practice4();
+		  co.practice1();
 	
 	
 	
