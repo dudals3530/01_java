@@ -301,10 +301,7 @@ public class ConditionExample { // 기능 제공용 클래스
 	}
 		
 		 // 다시풀어보자
- {
-		
-	
-} 
+ 
 
 
 public void ex8() {
