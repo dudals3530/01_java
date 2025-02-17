@@ -183,7 +183,8 @@ public class ArrayExample1 {
 			// ....
 			
 		}
-		System.out.printf("\n 평균 : %.2f cm", sum / height.length);
+		System.out.print("합계 : "+ sum);
+		System.out.printf("평균 : %.2f cm", sum / height.length);
 	}
 
 	public void ex4( ) {
@@ -446,7 +447,7 @@ public class ArrayExample1 {
 		char[] arr = new char[input.length()];
 		
 		for(int i =0; i < arr.length; i++) {
-			arr[i] = input.charAt(i);
+			arr[i] = input.charAt(i);   //  - > 문자열에서 특정 index에 위치한 문자를 얻어옴
 			//arr[0] = 'h';
 			//arr[1] = 'e';
 			//arr[2] = 'l';
@@ -455,7 +456,9 @@ public class ArrayExample1 {
 			
 		}
 		
-		System.out.println(Arrays.toString(arr));
+		System.out.println(arr);
+		 // char 값 배열을 String 으로 바꿔서 출력
+	 
 		
 		//2. 문자 하나를 입력받아 일치하는 문자가 char 배열에 몇개 존재하는지 확인
 		
