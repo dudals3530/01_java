@@ -216,7 +216,7 @@ public class BranchExample {
 		
    Scanner sc = new Scanner(System.in);
    
-   System.out.println("[가위바위보 게임 ~!!]");
+   System.out.print("[가위바위보 게임 ~!!]\n");
    System.out.print("몇판 ? : ");
    int round = sc.nextInt();
    
@@ -231,8 +231,10 @@ public class BranchExample {
       String input = sc.nextLine();
       
       int random = (int)(Math.random() *3 +1);
+      String str = null;
       
-      switch ()
+      switch (random)
+      
    
    
    } 
