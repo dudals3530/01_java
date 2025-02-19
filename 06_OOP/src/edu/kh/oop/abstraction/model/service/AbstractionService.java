@@ -91,7 +91,7 @@ public class AbstractionService {
 		me.setGender('남');
 		me.setPhone("010-2032-2942");
 		me.setAge(33);
-		me.setAddress("서울시 중라구 신내로 51길 성원 102 -902");
+		me.setAddress("서울시 중랑구 신내로 51길 성원 102 -902");
 		me.setpNo("930323-1011111");
 		
 		System.out.println(me.getName());

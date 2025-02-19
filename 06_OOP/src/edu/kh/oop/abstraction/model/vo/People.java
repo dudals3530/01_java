@@ -162,4 +162,20 @@ public class People {// 국민 (사람) 클래스
 		public void setName(String name) {
 			this.name = name;
 		}
+		/*
+		 * public void setAge(int age)
+		 *  // 메서드(기능) 형태인 getter/setter를 이용하면 본인이 원하는 기능을 추가할수있음
+		 *  // age 가 0보다 작을때 예외 발생시키키
+		 *  // age 가 0보다 클 때 속성에 전달받은 값 세팅하기..
+		 *  
+		 *  if (age >= 0 ){
+		 *                this.age = age;
+		 *         }else{
+		 *         throw new IllegalArgumetException("음수는안된다.. ");
+		 *           //llegalArgumetException d
+		 *           //메서드에 전달된 인자가 (매개변수)유효하지 않을때 발생하는예외
+		 * 
+		 * */
+		
+		
 }
