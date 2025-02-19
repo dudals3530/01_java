@@ -230,25 +230,88 @@ public class PracticeService {
 		 * [실행 화면] 정수 : 4 다시 입력하세요. 정수 : -6 다시 입력하세요. 정수 : 5 1, 2, 3, 2, 1
 		 * 
 		 */
-		System.out.print("정수 : ");
-		int input = sc.nextInt();
 
-		if (input <= 3 || input % 2 != 0) {
+		while (true) {
+			// 3이상의 수가 입력 될때 까지 무한반복
+			// -> 3이상 홀수가 입력되면 원하는 코드 수행후 break 문 으로 종료
+			System.out.print("정수 : ");
+			int input = sc.nextInt();
 
-			int mid = input / 2;
-			int count = 1;
-			int arr[] = new int[input];
-			for (int i = 0; i < arr.length; i++) {
-				arr[i] = count + i;
+			if (input < 3 || input % 2 == 0) { // 입력핫 수가 3이하거나 짝수일떄
+				System.out.println("다시 입력하세요!");
+
+			} else {
+				// 입력받은 정수만큼의 크기를 가지는 배열 생성
+				int[] arr = new int[input];
+				int num = 0; // arr 배열에 대입할 값
+
+				for (int i = 0; i < arr.length; i++) {
+
+					if (i <= arr.length / 2) { // 여기가 회차 mid 쪽
+						arr[i] = ++num;
+					} else {
+						arr[i] = --num;
+					}
+
+					if (i == input - 1) {// 정수입력 마지막 회차때
+						System.out.print(arr[i]);
+
+					} else {
+						System.out.print(arr[i] + ",");
+					}
+
+				}
+				break;
+				// 각 요소에 대입된 값 출력하기
+				// 출력시 , 추가 (단, 마지막 제외
+
 			}
 
 		}
-		System.out.print(Arrays.toString(arr));
 
 	}
 
 	public void practice9() {
 
+		/*
+		 * 10개의 값을 저장할 수 있는 정수형 배열을 선언 및 할당하고, 1~10 사이의 난수를 발생시켜 배열에 초기화한 후 출력하세요.
+		 */
+
+		int arr[] = new int[10];
+		System.out.print("발생한 난수:");
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = (int) (Math.random() * 10 + 1);
+
+			System.out.print(" " + arr[i] + " ");
+
+		}
+
+	}
+
+	public void practice10() {
+
+		/*
+		 * 10개의 값을 저장할 수 있는 정수형 배열을 선언 및 할당하고, 
+		 * 1~10 사이의 난수를 발생시켜 배열에 초기화 후 
+		 * 배열 전체 값과 그 값
+		 * 중에서 
+		 * 최대값과 최소값을 출력하세요.
+		 */
+
+		int[] arr = new int [10];
+		
+		for(int i =0; i< arr.length; i++) {
+			arr[i] = (int)(Math.random()*10+1);
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	public void practice13() {
@@ -311,91 +374,73 @@ public class PracticeService {
 		 * 사용자에게 배열에 값을 더 넣을지 물어보고 몇 개를 더 입력할 건지, 늘린 곳에 어떤 데이터를 넣을 것인지 받으세요. 사용자가 더 이상
 		 * 입력하지 않겠다고 하면 배열 전체 값을 출력하세요.
 		 * 
-		 * [실행 화면] 배열의 크기를 입력하세요 : 3 
-		 * 1번째 문자열 : 자바의 정석
-		 * 2번째 문자열 : 알고리즘 
-		 * 3번째 문자열 : C프로그래밍 
-		 * 더 값을 입력하시겠습니까?(Y/N) : y 
-		 * 더 입력하고 싶은 개수 : 2 
-		 * 4번째 문자열 : 인간관계 
-		 * 5번째 문자열 : 자기계발
-		 *  더 값을입력하시겠습니까?(Y/N) : y 
-		 *  더 입력하고 싶은 개수 : 1 
-		 *  6번째 문자열 : 영단어600 
-		 *  더 값을 입력하시겠습니까?(Y/N) : n
-		 * [자바의 정석, 알고리즘, C프로그래밍, 인간관계, 자기계발, 영단어600]
+		 * [실행 화면] 배열의 크기를 입력하세요 : 3 1번째 문자열 : 자바의 정석 2번째 문자열 : 알고리즘 3번째 문자열 : C프로그래밍 더
+		 * 값을 입력하시겠습니까?(Y/N) : y 더 입력하고 싶은 개수 : 2 4번째 문자열 : 인간관계 5번째 문자열 : 자기계발 더
+		 * 값을입력하시겠습니까?(Y/N) : y 더 입력하고 싶은 개수 : 1 6번째 문자열 : 영단어600 더 값을 입력하시겠습니까?(Y/N) :
+		 * n [자바의 정석, 알고리즘, C프로그래밍, 인간관계, 자기계발, 영단어600]
 		 */
 
 		// 1. 첫 배열 크기 지정
-			System.out.print("배열의 크기를 입력하세요: ");
-			int size = sc.nextInt();
-			sc.nextLine(); // 입력버퍼에 남은 개행문자제거
-			
-			String[] arr = new String[size];
-			
+		System.out.print("배열의 크기를 입력하세요: ");
+		int size = sc.nextInt();
+		sc.nextLine(); // 입력버퍼에 남은 개행문자제거
+
+		String[] arr = new String[size];
+
 		// 2. 첫배열에 저장할 문자여 입력받기
-			for (int i=0; i < arr.length; i++) {
-				System.out.print((i+1)+ "번째 문자열 : ");
-				arr[i] = sc.nextLine();
-			}
-				
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print((i + 1) + "번째 문자열 : ");
+			arr[i] = sc.nextLine();
+		}
+
 		// 3. 반복이 시작되는 구간부터 while 작성하여 내부에 종료조건만들어서 break;
-		 
-			while(true) {
-				System.out.print("더값을 입력하시겠습니다? (y/n): ");
-				char ch = sc.next().charAt(0);
-				
-				//4. 값을 더 입력할 경우
-				if(ch == 'y'|| ch =='Y') {
-					
-					//5. 더 입력받을 개수 입력받기
-					System.out.print("더 입력하고 싶은갯수 : ");
-					int addSize = sc.nextInt();
-					sc.nextLine(); // 입력버퍼 제거
-					
-					//6.새로 값을 입력받을 배열 생성 --> 기존 배열 크기 + 추가입력한갯수
-					String[] newArr = new String[arr.length + addSize];
-					
-					//7.배열 복사 + 새로운 문자열 입력받기
-					for (int i = 0; i<newArr.length; i++) {
-						
-						if(i < arr.length){//인덱스의 크기가 기존배열보다 작을경우 (깊은복사)
-							newArr[i] = arr[i];// 기존 배열 요소 값 복사
-							
-						}else {	// 인덱스의 크기가 기존배열 보다 클경우(새로운 값 입력받기)
-							System.out.print((i+1)+"번째 문자열: ");
-							newArr[i] = sc.nextLine();
-						}
-						
-						
+
+		while (true) {
+			System.out.print("더값을 입력하시겠습니다? (y/n): ");
+			char ch = sc.next().charAt(0);
+
+			// 4. 값을 더 입력할 경우
+			if (ch == 'y' || ch == 'Y') {
+
+				// 5. 더 입력받을 개수 입력받기
+				System.out.print("더 입력하고 싶은갯수 : ");
+				int addSize = sc.nextInt();
+				sc.nextLine(); // 입력버퍼 제거
+
+				// 6.새로 값을 입력받을 배열 생성 --> 기존 배열 크기 + 추가입력한갯수
+				String[] newArr = new String[arr.length + addSize];
+
+				// 7.배열 복사 + 새로운 문자열 입력받기
+				for (int i = 0; i < newArr.length; i++) {
+
+					if (i < arr.length) {// 인덱스의 크기가 기존배열보다 작을경우 (깊은복사)
+						newArr[i] = arr[i];// 기존 배열 요소 값 복사
+
+					} else { // 인덱스의 크기가 기존배열 보다 클경우(새로운 값 입력받기)
+						System.out.print((i + 1) + "번째 문자열: ");
+						newArr[i] = sc.nextLine();
 					}
-					
-					//8. 기존 배열 공간을 참조하던 변수 arr 에 새로운 배열 공간의 주소newArr 대입(얕은복사)
-					//더입력? y
-					//위 코드를 반복할때 기존 배열인 arr 의 길이를 기준으로 
-					//새배열 (newArr)의크기를 할당하기 때문에 얕은복사를 해줘야함.
-					                            
-					
-					arr= newArr; // - > 얕은 복사
-					
-					
-					
-				}else if (ch =='n' || ch=='n') {//값을 더 입력하지 않을경우
-					break;//while 반복문 종료
-				}else {//잘못 입력한경우
-					System.out.println("잘못 입력하셨습니다. 다시입력하세요.");
-					
+
 				}
-				
-				
-				
-				
+
+				// 8. 기존 배열 공간을 참조하던 변수 arr 에 새로운 배열 공간의 주소newArr 대입(얕은복사)
+				// 더입력? y
+				// 위 코드를 반복할때 기존 배열인 arr 의 길이를 기준으로
+				// 새배열 (newArr)의크기를 할당하기 때문에 얕은복사를 해줘야함.
+
+				arr = newArr; // - > 얕은 복사
+
+			} else if (ch == 'n' || ch == 'n') {// 값을 더 입력하지 않을경우
+				break;// while 반복문 종료
+			} else {// 잘못 입력한경우
+				System.out.println("잘못 입력하셨습니다. 다시입력하세요.");
+
 			}
-		
-			//10. 배열값 모두 출력
-			System.out.println(Arrays.toString(arr));
-		
-		
+
+		}
+
+		// 10. 배열값 모두 출력
+		System.out.println(Arrays.toString(arr));
 
 	}
 }
