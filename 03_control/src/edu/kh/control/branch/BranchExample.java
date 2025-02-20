@@ -195,81 +195,89 @@ public class BranchExample {
 			 
 		 }// for 문의 끝
 		 
-		 
-		 
-		 
-		 
-		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	}
-	
+		 
 	public void RSPGame2() {
 		
-   Scanner sc = new Scanner(System.in);
-   
-   System.out.print("[가위바위보 게임 ~!!]\n");
-   System.out.print("몇판 ? : ");
-   int round = sc.nextInt();
-   
-   int win = 0;
-   int lose = 0;
-   int draw =0;
-   
-   for (int i= 1; i<=round; ++i) {
-        System.out.println();
-	   System.out.println(round +"번째 게임");
-      System.out.print("가위/ 바위/ 보중 하나입력: ");
-      String input = sc.nextLine();
-      
-      int random = (int)(Math.random() *3 +1);
-      String com = null;
-      
-      switch (random) {
-      case 1 : com= "가위";break;
-      case 2 : com = "바위";break;
-      case 3 : com = "보"; break;
-      }
-      System.out.printf("컴퓨터는 [%s]를 선택했습니다.\n",com);
-      
-      if(input. equals(com));{
-    	  System.out.println("비겼습니다");
-    	  draw++;
-      }else { //이기거나 진경우
-    	  boolean win1 = input.equals("가위") && com.equals("보");
-    	  boolean win2 = input.equals("바위") && com.equals("가위");
-    	  boolean win3 = input.equals("보") && com.equals("바위");
-    	  s
-    	  if (win1 || win2 || win3) {
-    		  win++; System.out.println("이");
-    	  }
-    	  
-      }
-   
-   
-   } 
-   
-   
-	
-   
-   
+		Scanner sc = new Scanner(System.in);
 		
+		System.out.print("[가위바위보 게임 ~!!]\n");
+		System.out.print("몇판 ? : ");
+		int round = sc.nextInt();
 		
+		int win = 0;
+		int lose = 0;
+		int draw =0;
 		
+		for (int i= 1; i<=round; i++) {
+			System.out.println();
+			System.out.println(i +"번째 게임");
+			System.out.print("가위/ 바위/ 보중 하나입력: ");
+			String input = sc.nextLine();
+			
+			int random = (int)(Math.random() *3 +1);
+			String com = null;
+			
+			switch (random) {
+			case 1 : com = "가위";break;
+			case 2 : com = "바위";break;
+			case 3 : com = "보"; break;
+			}
+			System.out.printf("컴퓨터는 [%s]를 선택했습니다.\n",com);
+			
+			if(input .equals(com));{
+				System.out.println("비겼습니다");
+				draw++;
+			}else {
+			 //이기거나 진경우
+				boolean win1 = input.equals("가위") && com.equals("보");
+				boolean win2 = input.equals("바위") && com.equals("가위");
+				boolean win3 = input.equals("보") && com.equals("바위");
+				
+				if (win1 || win2 || win3) {
+					System.out.println("플레이어 승!!");
+					win++; 
+					
+				}else {
+					System.out.println("졌습니다. ㅠㅠ");
+				lose++;
+				
+				
+				}
+			}
+			System.out.printf("현재기록 : %d승 %d무 %d패\n",win,draw,lose);
+			
+			
+				
+		} 
 		
 		
 	}
-	 //가위바위보 내가 한번 더해보기	
+		
+		
+		
+		
+		
+		
 		
 	
-}
+	//가위바위보 내가 한번 더해보기	
+	
+	}
+		 
+		 
+		 
+		
+	
+	
+	
+	
+	
+	
+	
+		 
+	
+	
+	
 
 
