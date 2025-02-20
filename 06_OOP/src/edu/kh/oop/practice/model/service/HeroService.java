@@ -32,12 +32,7 @@ public class HeroService {
 			h1.dash();
 		}
 		
-		h1.attack(100);
-		h1.attack(50.5);
-		h1.attack(100);
-		h1.dash();
-		h1.dash();
-		h1.dash();
+		
 		System.out.println(h1.toString());
 		
 		System.out.println("======="+h2.getNickname()+"시점=======");
@@ -46,6 +41,8 @@ public class HeroService {
 		h2.attack(300);
 		h2.attack(300);
 		System.out.println(h2.toString());
+		
+		
 		
 	}
 }

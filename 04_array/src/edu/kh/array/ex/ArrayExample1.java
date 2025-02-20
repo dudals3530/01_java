@@ -456,7 +456,7 @@ public class ArrayExample1 {
 			
 		}
 		
-		System.out.println(arr);
+		System.out.println(Arrays.toString(arr));
 		 // char 값 배열을 String 으로 바꿔서 출력
 	 
 		

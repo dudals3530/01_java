@@ -11,8 +11,7 @@ public class PracticeRun {
 		
 		//Book.practice();
 		HeroService hr = new HeroService();
-		
-		hr.practice();
+				hr.practice();
 	
 	}
 }

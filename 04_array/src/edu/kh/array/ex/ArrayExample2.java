@@ -128,6 +128,8 @@ public class ArrayExample2 {
 		Arrays.sort(lotto);
 		
 		// 결과 출력
+		
+		System.out.println("로또번호생성기 두근두근 ~ ");
 		System.out.println(Arrays.toString(lotto));
 	}
 
