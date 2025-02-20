@@ -213,7 +213,7 @@ public class BranchExample {
 			System.out.println();
 			System.out.println(i +"번째 게임");
 			System.out.print("가위/ 바위/ 보중 하나입력: ");
-			String input = sc.nextLine();
+			String input = sc.next();
 			
 			int random = (int)(Math.random() *3 +1);
 			String com = null;
@@ -225,7 +225,7 @@ public class BranchExample {
 			}
 			System.out.printf("컴퓨터는 [%s]를 선택했습니다.\n",com);
 			
-			if(input .equals(com));{
+			if(input .equals(com)){
 				System.out.println("비겼습니다");
 				draw++;
 			}else {
