@@ -157,7 +157,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", userPw=" + userPw + ", userName=" + userName + ", userAge=" + userAge
-				+ ", userGender=" + userGender + "]"
+				+ ", userGender=" + "userGender";
 	}
 
 	// to String () 메서드 : Object 최상위 클래스 로 이미 만들어져 있는 메서드
