@@ -291,20 +291,48 @@ public class PracticeService {
 	public void practice10() {
 
 		/*
-		 * 10개의 값을 저장할 수 있는 정수형 배열을 선언 및 할당하고, 
-		 * 1~10 사이의 난수를 발생시켜 배열에 초기화 후 
-		 * 배열 전체 값과 그 값
-		 * 중에서 
-		 * 최대값과 최소값을 출력하세요.
+		 * 10개의 값을 저장할 수 있는 정수형 배열을 선언 및 할당하고, 1~10 사이의 난수를 발생시켜 배열에 초기화 후 배열 전체 값과 그 값
+		 * 중에서 최대값과 최소값을 출력하세요.
 		 */
 
-		int[] arr = new int [10];
-		
-		for(int i =0; i< arr.length; i++) {
-			arr[i] = (int)(Math.random()*10+1);
-			
+		int[] arr = new int[10];
+
+		int max = 1; // 최대값
+		int min = 10; // 최소값
+
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = (int) (Math.random() * 10 + 1);
+
+			System.out.print(arr[i] + " ");
 		}
-		
+		System.out.println();
+
+		for (int i = 0; i < arr.length; i++) {
+
+			if (arr[i] > max) { // 1보다 클때마다 i값에다가 넣어줌
+				max = arr[i];
+			}
+			if (arr[i] < min) {
+				min = arr[i]; // 10 보나 작을때마다 i값에다가 넣어줌
+			}
+		}
+
+		System.out.println("최대값 : " + max); // 최대값 출력
+		System.out.println("최소값 : " + min); // 최소값 출력
+
+	}
+
+	public void practice11() {
+		/*
+		 * 메소드 명 : public void practice11(){} 
+		 * 10개의 값을 저장할 수 있는 정수형 배열을 선언 및 할당하고 1~10
+		 * 사이의 난수를 발생시켜 중복된 값이 없게 배열에 초기화한 후 출력하세요.
+		 * 
+		 * [실행 화면] 
+		 * 4 1 3 6 9 5 8 10 7 2
+		 */
+
+		int [] arr = new int [10];
 		
 		
 		

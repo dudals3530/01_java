@@ -7,6 +7,6 @@ public static void main(String[] args) {
 	
 	 PracticeService pr = new  PracticeService();
 	 
-	 pr.practice9();
+	 pr.practice10();
 }
 }
