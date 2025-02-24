@@ -28,24 +28,24 @@ public class SnackMenu {
 		System.out.print("가격 : ");
 		int price = sc.nextInt();
 		
-		scr.saveDate(kind, name, flavor, numOf, price);
-		return"저장이 완료되었습니다.";
-		System.out.print("저장한정보를 확인하시겠습니까? (y/n)");
-		char choice = sc.next().charAt(choice);
+		System.out.println(scr.saveDate(kind, name, flavor, numOf, price));
+		
+		String result = sc.next(); // y or n
+		
+		if (result.equals("y")) {
+			//저장된 데이터를 출력
+			System.out.println(scr.confirmData());}
+		
+		}
+		
+		
+	}
+		
+		
+		
+		
+		
+		
+		
+		
 
-		switch (choice) {
-		
-		case 'y':System.out.print(get.k);
-		case 'n':
-		default : System.out.print("(y,n)만눌러주세요.");	
-		}
-	
-		
-		
-		
-		
-		
-		
-		
-		}
-}
