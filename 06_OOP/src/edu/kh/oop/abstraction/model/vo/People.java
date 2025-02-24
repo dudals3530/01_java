@@ -176,6 +176,10 @@ public class People {// 국민 (사람) 클래스
 		 *           //메서드에 전달된 인자가 (매개변수)유효하지 않을때 발생하는예외
 		 * 
 		 * */
+
+		public static void main(String[] args) {
+			return "회원 가입 불가능합니다.(인원수초과)";
+		}
 		
 		
 }
