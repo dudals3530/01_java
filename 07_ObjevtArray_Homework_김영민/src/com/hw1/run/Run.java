@@ -87,7 +87,7 @@ public static void main(String[] args) {
 	
 	//3명의 직원의 연봉 평균을 구하여 출력
 	
-	
+	//집에서 다시해
 	
 	
 	
