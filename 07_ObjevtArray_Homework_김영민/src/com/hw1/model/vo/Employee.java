@@ -46,13 +46,13 @@ public class Employee {
 	}
 	
 	
-	//  ? ? ?
+	
 	
 		
 	
 
 
-public String information() {
+public String information() { //1. String 이기 때문에 return = "; 이렇게 넣고 생각해보자.
 		return   empNO+ ", " +  empName+ ", " + dept+ ", "  + job+ ", " +  age+ ", "
 				+ gender+ ", " + salary+ ", " +  bonusPoint+ ", "  + phone+ ", "
 				+ ", "+  address  ;

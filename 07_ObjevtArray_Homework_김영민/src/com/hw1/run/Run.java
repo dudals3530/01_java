@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import com.hw1.model.vo.Employee;
 
+
 public class Run {/*
 
 *3개의 생성자를 사용하여 3명의 사원 정보를
@@ -22,8 +23,9 @@ public static void main(String[] args) {
 	
 
 	//3개의 객체중값이 없는 필드에 각각 값을 넣은뒤 출력
-	emp[0] = new Employee(0, null, null, null, 0, ' ', 0, 0.0, null, null);
-	emp[1] = new Employee(1,"홍길동",null,null,19,'M',0,0.0,"01022223333","서울마곡");
+	emp[0] = new Employee();// 기본생성자 
+	emp[1] = new Employee(1,"홍길동",19,'M',"01022223333","서울마곡"); //null 값을 안넣어도 이미 만든매개변수 생성자에 의해
+	                      											// 값을 안넣어도
 	emp[2] = new Employee(2,"강말순","교육부","강사",20,'F',1000000,0.1,"01022223333","서울마곡");
 	
 	
@@ -32,7 +34,14 @@ public static void main(String[] args) {
 	System.out.println("emp[1] : "+emp[1].information());
 	System.out.println("emp[2] : "+emp[2].information());
 	System.out.println("=====================================================");
+	//포문 돌아도 편함
+	// for ( int i = 0 ; i < emp.length; i++){
+	    // syso  ("emp [" + i + "]" . emp[i].information(); 
+	// 이런식으로도 할수 있
 	
+	
+	//3개의 객체중 값이 없는 필드에 각각 값을 넣고 출
+	emp[0].setEmpNO(0);
 	emp[0].setEmpName("김말똥");
 	emp[0].setDept("영업부");
 	emp[0].setJob("팀장");
@@ -58,6 +67,10 @@ public static void main(String[] args) {
 	//직원 각각의 보너스가 적용된 1년 연봉을 계산하여 출력
 	// 연봉 = (급여+(급여*보너스포인트)) *12
 
+	//for 문 
+	//for ( int i =0 ; i< emp.length; i++)
+	// { int sumSalaty = emp[i].getSalary() + (emp[i].getSalary() * emp[i].getBonusPoint()) )* 12
+ 	
 	int salary0 = (int) ( (emp[0].getSalary() + ( emp[0].getSalary() * emp[0].getBonusPoint() ) ) * 12);
 	int salary1 = (int) ( (emp[1].getSalary() + ( emp[1].getSalary() * emp[1].getBonusPoint() ) ) * 12);
 	int salary2 = (int) ( (emp[2].getSalary() + ( emp[2].getSalary() * emp[2].getBonusPoint() ) ) * 12);
