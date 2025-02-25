@@ -96,29 +96,34 @@ public class Run {
 			emp[num] = new Employee(inputName, inputAge, inputHeight, inputWeight, inputSalary, inputDept);
 			num++;
 			
-			 System.out.print("계속 추가할래? (y/n)");
-			inputyn = sc.next();
-			
 			
 			if( num == emp.length) {
 				break;
 			}
-			
+		    while(true){System.out.print("계속 추가할래? (y/n)");
+			inputyn = sc.next();
 			
 			if(inputyn.equals("n") || inputyn.equals("N") )  {
 			    flag = false;
 				break;
 				
 			
-			}else if (inputyn.equals("y")|| inputyn.equals("Y")  ) {
+		    }else if (inputyn.equals("y")|| inputyn.equals("Y")  ) {
 				flag = true;
-				
-			}else {
-				System.out.print("잘못 입력하셨습니다.");
 				break;
-			}
-		
-		}
+		    }else {
+				System.out.print("잘못 입력하셨습니다.");
+				
+		    }
+			
+		    }
+			
+			
+			
+			
+			
+			
+			
 		
 		for (int i = 0 ; i < num; i++) {
 			System.out.println(emp[i].information());
@@ -147,7 +152,7 @@ public class Run {
                                                                      		
 		
 		
-			
+		}}}
 			
 		
 		
@@ -161,7 +166,7 @@ public class Run {
     		
     
     
-    	}	    	
+    
 	    	
 
 	            
@@ -178,5 +183,5 @@ public class Run {
 		
 	
 	
-}
+
 	
