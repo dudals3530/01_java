@@ -228,9 +228,16 @@ public class LoopPractice {
 
 	
 		System.out.print("정수 입력 : ");
-		int input = sc.nextint();
+		int num = sc.nextInt();
 		
-		for (int i = 0; i <= num; ++i)
+		for (int i = 1; i <= num; i++) {
+		    
+			for (int i2=0; i2 < i; i2++) {
+				System.out.println("*");
+			
+			
+			}
+		}
 	
 	
 	
