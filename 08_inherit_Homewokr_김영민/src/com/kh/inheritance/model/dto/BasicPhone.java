@@ -23,9 +23,11 @@ public class BasicPhone extends Phone {
 	
 	public void checkKeyboard() {// 이건 먼기능 ? ?
 		
-	 super.printInfo();
-	 if (true) {
+	 
+	 if (hasPhysicalKeyboard) {
 			System.out.println("이 휴대폰은 물리적 키보드가 있습니다.");
+		}else {
+			System.out.println("이 휴대폰은 물리적 키보드가 없습니다.");
 		}
 		
 	}

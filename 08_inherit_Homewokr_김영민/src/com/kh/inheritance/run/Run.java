@@ -17,7 +17,7 @@ public class Run {
 	
 		System.out.println("===============");
 		
-		
+		bp.printInfo();
 		bp.checkKeyboard();
 		
 }
