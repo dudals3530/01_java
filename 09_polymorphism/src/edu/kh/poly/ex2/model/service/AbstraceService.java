@@ -25,13 +25,13 @@ public class AbstraceService {
 		
 		Fish f1 = new Fish();
 		
-		f1.setType("척추동물 중 어류 맞대 ");
+		f1.setType("척추동물  ");
 		f1.setEatType("잡식");
 	
 		System.out.println(p1.toString());
 		System.out.println(f1.toString());
 		
-		//추상 클래스와 다형성
+		//추상 클래스와 다형성 + 바인딩
 		
 		Animal a1 = new Person(); //다형성중 업캐스팅
 		Animal a2 = new Fish();   // 다형성중 업캐스팅
@@ -45,6 +45,9 @@ public class AbstraceService {
 		a2.breath();
 		a2.move();
 		a2.eat();
+		
+		System.out.println();
+		
 		
 		
 	}
