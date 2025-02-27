@@ -40,6 +40,11 @@ public class Prison implements ManagementSystem {
 		 * 
 		 * 
 		 * */
+		if (person instanceof Prisoner && prisonerCount <= prisoners.length) {
+			
+			
+		}
+		
 		
 	}
 

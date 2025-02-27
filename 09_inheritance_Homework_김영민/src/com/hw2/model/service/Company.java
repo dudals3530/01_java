@@ -10,9 +10,13 @@ import com.hw2.model.dto.Person;
 public class Company implements ManagementSystem {
 
 	Scanner sc= new Scanner(System.in);
-	private Employee[] employee; // 전체직원저자용 배열
 	
+	
+	private Employee[] employee; // 전체직원저자용 배열
 	private int employeeCount; // 직원수
+
+
+	private Employee[] employees;
 
 	public Company(int size) {
 
@@ -33,15 +37,11 @@ public class Company implements ManagementSystem {
 		 * 만약 배열에 더 이상 공간이 없다면, 인원이
 		 * 모두 충원되었다는 메시지 출력
 		 */
-		if ( employee.length > employeeCount ) {
-			employee[employeeCount]  =  new Employee() ;
-			employeeCount++;
-			System.out.print("직원이 추가되었습니다.");
-			System.out.println(person.getInfo());
+		// 매개변수로 들어온 person이 Employee인지 체크
+		// employees 객체 배열 공간이 있는지 체크
+		if (person instanceof Employee && employeeCount < employee.length ) {
+			employees[employeeCount++] = (Employee) person; // 다운캐스팅
 			
-			
-		}else {
-			System.out.println("모두충원 되었습니다.");
 		}
 		
 		
