@@ -473,7 +473,7 @@ public class StudentService {
 
 
 		/*
-		 * List를 정력하는 방법
+		 * List를 정렬하는 방법
 		 * 
 		 * 방법 1: Cmparable 인터페이스 상속 받아 compareTo() 메서드 재정의
 		 * Student 에 Comparable 인터페이스를 상속받아 오버라이딩한 CompareTo() 에
