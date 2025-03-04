@@ -32,15 +32,16 @@ public class SnackMenu {
 		
 		String result = sc.next(); // y or n
 		
-		if (result.equals("y")) {
-			//저장된 데이터를 출력
-			System.out.println(scr.confirmData());}
-		
-		}
 		
 		
 	}
+}
+}
+}}
+
 		
+	
+	
 		
 		
 		

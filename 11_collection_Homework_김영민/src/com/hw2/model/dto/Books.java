@@ -40,19 +40,6 @@ public class Books {
 	
 	
 	
-	
-	
-	
-	
-	
-
-
-
-
-
-
-
-
 	public int getNum() {
 		return num;
 	}

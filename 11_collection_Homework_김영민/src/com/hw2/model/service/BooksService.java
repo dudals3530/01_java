@@ -58,15 +58,15 @@ public class BooksService {
 	
 		switch(menuNum) {
 		
-		case 1: System.out.println(addBook());        break;
-		case 2: allBook() ;                           break;
-		case 3:System.out.println(fixBook());         break;
-		case 4:System.out.println(dellBook());        break;
-		case 5:System.out.println(starkBookAdd());    break;
+		case 1: System.out.println(addBook());         break;
+		case 2: allBook() ;                            break;
+		case 3:System.out.println(fixBook());          break;
+		case 4:System.out.println(dellBook());         break;
+		case 5:System.out.println(starkBookAdd());     break;
 		case 6:System.out.println(starkBookDell() );   break;
-		case 7: starBookAll();   break;
-		case 8:randomBook();      break;
-		case 0:System.out.println("프로그램 종료");break;
+		case 7: starBookAll();                         break;
+		case 8:randomBook();                           break;
+		case 0:System.out.println("프로그램 종료");    break;
 		
 		default : System.out.println("알맞은 번호를 넣어주세요");
 		
@@ -232,11 +232,11 @@ public class BooksService {
 		
 		    case 1: System.out.print("수정할 도서명을 입력하세요");
 					String inName = sc.nextLine();
-					b.setName(inName);return"수정 완료";	
+					b.setName(inName);                      return"수정 완료";	
 						
 		    case 2: System.out.print("수정할 저자명을 입력하세요");
 		    		String inAuthor = sc.nextLine();
-		    		b.setAuthor(inAuthor);return"수정 완료";	
+		    		b.setAuthor(inAuthor);                  return"수정 완료";	
 		    		
 		    case 3: System.out.print("수정할 가격명을 입력하세요");
 					int inPrice = sc.nextInt();
@@ -244,22 +244,22 @@ public class BooksService {
 		    case 4: System.out.print("수정할 출판사명을 입력하세요");
 					String inMade= sc.next();
 					b.setMade(inMade);
-					return"수정 완료";	
+					                                        return"수정 완료";	
 		    case 5: 
-		    		return"종료";
+		    	                                          	return"종료";
 		    
 		    default : 
-		    		return"정해진 숫자만 넣어주세요";
+		    	                                        	return"정해진 숫자만 넣어주세요";
 		} 
 			
 	}
 		
 		if (flag) {
-			return"일치하는 도서번호가 없습니다.";
+		               	return"일치하는 도서번호가 없습니다.";
 		
 		}
 		
-		return"수정 완료";	
+		                return"수정 완료";	
 	}	  		
 		
 	

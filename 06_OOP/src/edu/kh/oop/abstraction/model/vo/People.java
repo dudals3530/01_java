@@ -177,7 +177,7 @@ public class People {// 국민 (사람) 클래스
 		 * 
 		 * */
 
-		public static void main(String[] args) {
+		public static String main(String[] args) {
 			return "회원 가입 불가능합니다.(인원수초과)";
 		}
 		
