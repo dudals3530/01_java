@@ -6,7 +6,7 @@ public class PolyRun {
 	
 	public static void main(String[] args) {
 		
-	 new PolyService().ex5();
+	 new PolyService().ex3();
 		
 		
 	}

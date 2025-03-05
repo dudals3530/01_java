@@ -10,7 +10,7 @@ public class Toy {
 	private int    price;            // 가격
 	private String color;            // 색상
 	private String made;             // 제조일
- 	private Set<String> material;         // 재료
+ 	private Set<String> materials;         // 재료
 	
  	
  	
@@ -28,7 +28,7 @@ public class Toy {
  		this.price = price;
  		this.color = color;
  		this.made = made;
- 		this.material = material;
+ 		this.materials = material;
  	}
  	
  	
@@ -42,7 +42,7 @@ public class Toy {
  	
  	@Override
  	public int hashCode() { // 혹시몰라 일딴 해놈
- 		return Objects.hash(avalage, color, made, material, name, price);
+ 		return Objects.hash(avalage, color, made, materials, name, price);
  	}
  	
  	
@@ -58,7 +58,7 @@ public class Toy {
  			return false;
  		Toy other = (Toy) obj;
  		return avalage == other.avalage && Objects.equals(color, other.color) && Objects.equals(made, other.made)
- 				&& Objects.equals(material, other.material) && Objects.equals(name, other.name) && price == other.price;
+ 				&& Objects.equals(materials, other.materials) && Objects.equals(name, other.name) && price == other.price;
  	}
  	
  	
@@ -67,7 +67,7 @@ public class Toy {
  	
  	public String toyInfo() { // 해당 Toy의 status를 보여주는 ? 
  		return ".이름 : " + name + " / 사용 가능연령 : " + avalage + " / 가격 : " + price + " / 색상 :" + color + " / 제조년월일  : " + made
- 				+ " / 재료 : " + material.toString() ;
+ 				+ " / 재료 : " + materials.toString() ;
  	}
  	
  	
@@ -135,11 +135,11 @@ public class Toy {
  	
  	
  	public Set<String> getMaterial() {
- 		return material;
+ 		return materials;
  	}
  	
  	public void setMaterial(Set<String> material) {
- 		this.material = material;
+ 		this.materials = material;
  	}
 
  	

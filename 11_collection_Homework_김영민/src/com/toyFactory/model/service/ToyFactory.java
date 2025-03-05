@@ -20,9 +20,24 @@ public class ToyFactory {
 	private Set<Toy> toyList = new HashSet<Toy>();
 	private Map<Integer, String> mataList = new HashMap<Integer, String>();
 
+	
+	
+	
+	
 	public Set<String> addMaterals(int... nums) {// 이건 진짜 .. 어렵다 슨상님이 풀이해줄떄
-													// 꼮꼮꼮꼮꼮꼮꼮꼮꼬꼮꼬꼬ㅗ꼬꼬꼬꼬꼬꼬ㅗ꼬꼮
+						 // 가변인자는 배열로 들어옴			// 꼮꼮꼮꼮꼮꼮꼮꼮꼬꼮꼬꼬ㅗ꼬꼬꼬꼬꼬꼬ㅗ꼬꼮
 													// 정확하게 이해하고넘어가자
+		
+		
+		// map 에 없는 key를 입력하여 value 를 얻어왔을때 == null
+		// if ( value == null){ addedMaterials.add(mate
+		
+		 // as List
+		//  
+		
+		
+		
+		
 		Set<String> addMate = new HashSet<>();
 	
 		for (int a : nums) {
@@ -196,7 +211,7 @@ public class ToyFactory {
 			return;
 		}
 		
-		Toy dellToy = null; // 삭제할 Toy 타입 매개변수
+		// 삭제할 Toy 타입 매개변수
 		boolean flag = true;
 		for (Toy t : toyList) {
 		
@@ -204,7 +219,7 @@ public class ToyFactory {
 		
 			if	(t.getName().equals(inName)){
 			
-				dellToy =t; //삭제할 장난감을 t 에넣어버렷
+				toyList.remove(t); //삭제할 장난감을 t 에넣어버렷
 				flag = false; // 해당 장난감을 찾아씀메
 				break;         //찾았으면굳이 더 for문 돌지말고 멈췃!
 			}
@@ -213,7 +228,7 @@ public class ToyFactory {
 			
 		} if (flag == false) { // 해당 장난감을 찾았을때 
 			
-			toyList.remove(dellToy);
+			
 			System.out.println("해당 장난감은 삭제했습니다");
 			return;
 		
@@ -277,6 +292,13 @@ public class ToyFactory {
 	 */
 	public void ageToy() {
 		
+		
+		/*
+		 * 해쉬멥을 만들고 키벨류에서 키를 인티저 벨류는 리스트가 들어간 토이
+		 * 연령을 키로 지정하고 해당연령을 가진 장난감 리스트를 벨류로 가짐
+		 *  포문 을 돌면서 나이 값을 가져오면서 putIfAbsent 라는 메서드를 사용
+		 *  그나이와 뉴 토이 어레이 리스트를 해줌  
+		 * */
 		
 		
 	}
