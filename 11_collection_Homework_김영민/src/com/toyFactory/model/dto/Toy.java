@@ -41,7 +41,8 @@ public class Toy {
  	}
  	
  	@Override
- 	public int hashCode() { // 혹시몰라 일딴 해놈
+ 	public int hashCode() { // String 중에 우리가 같은 객체가 들어왓을때
+ 		                    // 그객체가 같은 값을 가지고있음을 나타내는 메서드
  		return Objects.hash(avalage, color, made, materials, name, price);
  	}
  	

@@ -42,12 +42,19 @@ public class ToyFactory2 {
 	}
 	
 	
-	// 전달받은 매개변수 인자에 따라 재료저장 Map 에 있는지 확인하고 Set<String> 으로 반환하는 메서드
-	// 가변인자 작성법 ! :자료형...변수명 - > 매개변수의 수가 정확히 몇개 올지 모를때 사용
 	
+	
+	/**
+	 * Set<String> 타입의 재료를 추가하는 메서드
+	 * 
+	 */
 	public Set<String> addMaterials (Integer...materials) { // Toy 클래스에서 재료의 타입을 우린 Set<String> 으로 정의함 
 		                            //자료형    변수명        // 이에따라 재료의타입을 맞추어야함.
 	
+		// 전달받은 매개변수 인자에 따라 재료저장 Map 에 있는지 확인하고 Set<String> 으로 반환하는 메서드
+		// 가변인자 작성법 ! :자료형...변수명 - > 매개변수의 수가 정확히 몇개 올지 모를때 사용
+		
+		
 		// 매개변수로 전달받은 Set 객체 생성하기 
 		Set<String> addMaterials = new HashSet<String>();
 		
@@ -74,9 +81,12 @@ public class ToyFactory2 {
 				                     
 	}
 	
+	/**
+	 * 메뉴 보여주는 메서드
+	 */
 	public void displayMenu() {
 
-		int menuNum = 0; //menu
+		int menuNum = 0; // 변수로 쓸 menuNum 을 초기화 했음
 		
 		do{System.out.println("<<플레이 타임 공장>>");
 			
@@ -97,8 +107,8 @@ public class ToyFactory2 {
 		
 			switch(menuNum) {
 		
-			case 1: //allToy();         break;
-			case 2: //addToy() ;        break;
+			case 1: allToy();         break;
+			case 2: addToy() ;        break;
 			case 3: //dellToy();        break;
 			case 4:// madeToy();        break;
 			case 5: //ageToy();                                       break;
@@ -116,10 +126,118 @@ public class ToyFactory2 {
 				System.out.println("숫자만 들어올수 있어유");
 				sc.nextLine();
 			}
-			    menuNum = -1;
+			    menuNum = -1;  // -1 값으로 안바꿔주면 루프문을 탈출을 못함 .
+			    
 		}while(menuNum!=0);
 
 	}
 
+	
+	/**
+	 * toySet에 있는 toy 출력 하는 메서드
+	 * 모든 Toy를 출력하는 기능 이라고 보면됨.
+	 * 
+	 * 머얌 .. 쌤이랑 똑같이햇음 ;;; ㄹㅇ ;;; 개신기하누 .;
+	 */
+	public void allToy(){
+		
+		int index = 1; // X번째 오는 즉 순번으로 쓸 매개변수임
+		
+		if (toySet.isEmpty()) {//toySet에 하나라도 존재하는 장난감이 없다고하면
+			System.out.println("현재 존재하는 장난감이 없어요");
+			return;
+			
+		}
+		
+		for (Toy toy : toySet) {
+			
+			System.out.println(index + toy.toyInfo());// index번째 의 Toy 의 info가 올꺼임
+			index++; // for문을 돌때마다 번쨰를 1칸만큼 올림
+			 
+		}return;
+		
+	}	
+	
+	/**
+	 * 새로운 장난감을 추가하는 메서드
+	 * 
+	 */
+	public void addToy() {
+		
+	 // 재료의 입력값을 우선 선언
+		String input = "";
+		System.out.print("장난감 이름: ");
+		String inName = sc.next();
+
+		for (Toy t : toySet) { // toySet 에 입력한 장난감이름이랑 똑같은지 있는지 없는지 확인시켜줄
+			                      // 포문 
+			                    // 내가 Toy 에다가 hashcode를 오버라이드 해놧끼에 같은지 다른지 알수잇음.
+			                    // 만약 안해놔잇으면 .. 동일객체인지 구분못해 자바 바보라서..
+			
+			if (t.getName().equals(inName)) { // 포문을 돌때 해당 t번째 Toy의 이름이 입력한 이름과 같다면
+				
+				System.out.println("해당 장난감은 이미 있어요");
+				               
+				return;// 프리트 구문 출력하고 메서드 탈출 .. 필요하면 다시써 ㅡㅡ
+			}
+		}
+		
+		System.out.print("사용연령 : ");
+		int inAge = sc.nextInt();
+
+		System.out.print("장난감 가격 : ");
+		int inPrice = sc.nextInt();
+
+		System.out.print("장난감 색상 : ");
+		String incolor = sc.next();
+
+		System.out.print("장난감 제조년월 YYMMDD형식으로 입력 : ");
+		String inMade = sc.next();
+		
+		//스캐너를 이용한 입력값들 이후 재료만 다시 처리해보자..
+		
+		// 재료를 받아올 Set 생성
+		Set<String> materials = new HashSet<>();
+		
+		
+		
+	
+		
+		
+		
+		do {    //q 가입력될때까지 계속 재료를 추가시켜줄 루프문 
+			    //do는 최소한번은 실행되는 메서드
+                System.out.print("재료를 입력해주세요 (q를 입력할때까지 추가할것입니다.) : ");			
+                 input = sc.next();
+                materials.add(input);
+                //입력값을 재료를받아올 Set에다가 추가함
+		
+		}while(!input.toUpperCase().equalsIgnoreCase("Q"));
+		
+		//입력값이 q랑 같지 않다면 계속 돌아줄거임
+		//toUpperCase  이건 q 든 Q 가 들어오면 종료시켜줄것.
+		//equalsIgnoreCase("Q") 입력 q 값까지 재료에 포함됨으로 .. 
+		//IgnoreCase 씀으로 써 q는재료에서 제외됨.
+		
+		
+	    
+		
+		Toy addToy = new Toy (inName,inAge,inPrice,incolor,inMade,materials);
+		              //입력받은것들을 (재료포함) 을 addToy 라는 새로운 Toy 객체를 생성
+	                                               	
+		toySet.add(addToy);
+		// 입력받은 addToy를 toySet 에다가 추가시켜줌
+		
+		System.out.println(addToy.getName() +" 장난감이 추가되었습니다.");
+		                          //해당 장난감의 이름을 불러오면서 장난감이 추가됬다는 구문
+		
+		System.out.println("==현재 적용된 장난감 목록==");
+		
+		allToy(); //추가된 장난감 까지 포함된 현재 장난감 목록들을 출력시키는 메서드
+		          // 내가 위에다가 정의해낫기때문에 그냥 가져와서써버림
+		
+		 return;// 여기까지오면이제 할꺼없음 메서드탈출
+		
+	}
 	
 }
