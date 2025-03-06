@@ -3,7 +3,9 @@ package com.toyFactory.model.dto;
 import java.util.Objects;
 import java.util.Set;
 
-public class Toy {
+
+
+public class Toy implements Comparable<Toy> {
 
 	private String name;             // 이름
 	private int    avalage;          // 사용가능연령
@@ -143,7 +145,21 @@ public class Toy {
  		this.materials = material;
  	}
 
- 	
+
+
+
+
+	@Override
+	public int compareTo(Toy other) {
+		
+		return this.made.compareTo(other.made);
+	}
+
+
+
+
+
+
  	
  
 

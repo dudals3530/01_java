@@ -191,7 +191,7 @@ public class BooksService {
 			if (b.getNum() == input) {
 
 				flag = false;
-
+				
 				System.out.println("1. " + b.getName());
 				System.out.println("2. " + b.getAuthor());
 				System.out.println("3. " + b.getPrice());
@@ -243,7 +243,7 @@ public class BooksService {
 
 		}
 
-		return "수정 완료";
+	
 	}
 
 	/**

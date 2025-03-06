@@ -1,11 +1,16 @@
 package com.toyFactory.model.service;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.TreeSet;
 
 import com.toyFactory.model.dto.Toy;
 
@@ -109,9 +114,9 @@ public class ToyFactory2 {
 		
 			case 1: allToy();         break;
 			case 2: addToy() ;        break;
-			case 3: //dellToy();        break;
-			case 4:// madeToy();        break;
-			case 5: //ageToy();                                       break;
+			case 3: dellToy();        break;
+			case 4: madeToy();        break;
+			case 5: ageToy();         break;
 			case 6:                                        break;
 			case 7:                                        break;
 			case 0:System.out.println("프로그램 종료");    break;
@@ -239,5 +244,145 @@ public class ToyFactory2 {
 		 return;// 여기까지오면이제 할꺼없음 메서드탈출
 		
 	}
+	
+	
+	/**
+	 * 장난감을 없애버리는 메서드
+	 */
+	public void dellToy() {
+
+		
+		
+		String input = "";//받아올 입력값을 미리 선언
+		allToy();   //현재 있는 장난감을 조회
+		
+		boolean flag = true; //해당장난감을 찾으면 표시해줄 flag 
+		
+		System.out.println("삭제할 장난감의 이름을 입력해주세요 ");
+		input = sc.nextLine(); 
+		
+		for (Toy delltoy : toySet) {
+			
+			if (delltoy.getName().equals(input)) {
+				flag=false;
+				toySet.remove(delltoy);
+				System.out.println(delltoy.getName()+"은 삭제되었습니다.");
+				return;
+			}
+		}
+		while(flag) {
+			System.out.println("해당장난감은 업네유");
+			return;
+		}
+		
+	}
+
+	/**
+	 * 장난감의 제조일 순으로 입력하는 메서드
+	 * 
+	 */
+	public void madeToy() {
+		
+		/*@Override
+		public int compareTo(Toy other) {
+			
+			return this.made.compareTo(other.made);
+		}*/
+		// Toy 클래스 안에서 compareTo를 오버라이드해옴
+		// Toy 객체와 다음 Toy o 를 비교함 
+		// 즉 Toy.made 와 o.made 를 비교
+		//반환값이 int 형인대 현재 객체가 다음값보다작으면 음수
+		                                          //크면양수,같으면 0을반환
+                                                  // 이걸이용해서 조건문으로 써서할수도잇을뜻.?		
+		
+		
+		System.out.println("==장난감을 제작순으로 나열==");
+		
+		List<Toy> treeToy = new ArrayList<Toy>();
+		//Set 객체에 있는 토이들을 담을 List 객체 생성
+	
+		treeToy.addAll(toySet);
+		// 위에 생성한 List 객체에 toySet의 모든 Toy들을 넣어줌
+		
+		Collections.sort(treeToy);
+		//Comparable 인터페이스가 가지고있는 compareTo를 쓰기위해서는 
+		//모든 Toy를 담은 treeToy=> List형을 정렬 시켜주자! 
+		// 그럼 내가 Toy에다가 정의한 compareTo로 인해 made는 자동정렬될꺼임
+		// 이렇게 되면 정렬이 완료됨
+		// 즉 Collections.sort를 쓰기위해서는 List형이여야만하고 내가 정의한 클래스에
+	    //  compareTo 를 오버라이드 해줘야함 !	
+	
+		
+		for(Toy madeToy : treeToy) {
+			// 모든 TOy들을 불러올 for 문 
+			
+		System.out.println(madeToy.toyInfo());
+		//toyInfo라는 메서드를 정의해놈 이걸이용햇음
+		
+			
+		}
+		
+	}
+
+	
+	/**
+	 * 장난감의 사용연령별로 
+	 */
+	public void  ageToy() {
+	
+		System.out.println("==사용연령별 장난감! ==");
+		
+		if(toySet.isEmpty()) { //toySet이 비어있는지 확인
+			System.out.println("장난감이 존재하지않네요 추가해주세요.");
+			return;
+		}
+		
+
+	    // 연령별 장난감을 저장할 Map 생성
+		
+		Map<Integer, List<Toy>> mapToy = new HashMap<>();
+		
+		
+		
+		for (Toy keyToy : toySet) {// toySet의 각 장난감을 순회
+			
+			int age =keyToy.getAvalage();// 장난감의 사용 가능 연령을 가져옴
+			//현재 순회 중인 장난감의 사용 가능 연령(age)을 가져옵니다.
+			if (!mapToy.containsKey(age)) {// 해당 연령 키가 없으면 새 리스트를 생성하여 추가
+				
+				mapToy.put(age,new ArrayList<Toy>());
+				//mapToy에 현재 연령(age) 키가 없는지 확인합니다. 없다면, 
+				//해당 연령 키에 빈 리스트(new ArrayList<Toy>())를 추가합니다.
+
+			}
+		
+			mapToy.get(age).add(keyToy);// 해당 연령 리스트에 장난감 추가
+			//mapToy에서 현재 연령(age) 키에 해당하는 리스트를 가져와서,
+			//현재 장난감(keyToy)을 추가합니다.
+			
+			
+			
+		}//mapToy의 각 항목을 순회하며 출력
+		for (Entry<Integer, List<Toy>> entry : mapToy.entrySet()){
+			//mapToy의 각 항목을 순회합니다. 각 항목은 연령과 해당 연령의 장난감 리스트로 구성됩니다.
+			System.out.println("["+entry.getKey()+"세연령 사용가능]");
+			//현재 연령(entry.getKey())을 출력합니다.
+			int i = 1;
+			for(Toy toy1 : entry.getValue()) {// 각 연령 리스트의 장난감을 순회하며 출력
+			
+				System.out.print(i+".");
+				System.out.println(toy1.getName());
+				i++;
+			}
+			
+			
+		}
+		return;
+		
+
+	}
+	
+	
+	
 	
 }
