@@ -6,7 +6,7 @@ public class MapRun {
 
 	public static void main(String[] args) {
 	
-		new MapService().ex3();
+		new MapService().ex2();
 }
 	
 }

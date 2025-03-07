@@ -117,7 +117,7 @@ public class ToyFactory2 {
 			case 3: dellToy();        break;
 			case 4: madeToy();        break;
 			case 5: ageToy();         break;
-			case 6:                                        break;
+			case 6: addmate();                                     break;
 			case 7:                                        break;
 			case 0:System.out.println("프로그램 종료");    break;
 			
@@ -327,6 +327,7 @@ public class ToyFactory2 {
 	
 	/**
 	 * 장난감의 사용연령별로 
+	 * 진짜 줜나 어려움 ㅡㅡ
 	 */
 	public void  ageToy() {
 	
@@ -341,7 +342,7 @@ public class ToyFactory2 {
 	    // 연령별 장난감을 저장할 Map 생성
 		
 		Map<Integer, List<Toy>> mapToy = new HashMap<>();
-		
+		// value의 값을 그냥 Toy로 하게되면 겹치는 연령별 Toy 객체들은 출력이 안됨..
 		
 		
 		for (Toy keyToy : toySet) {// toySet의 각 장난감을 순회
@@ -349,6 +350,13 @@ public class ToyFactory2 {
 			int age =keyToy.getAvalage();// 장난감의 사용 가능 연령을 가져옴
 			//현재 순회 중인 장난감의 사용 가능 연령(age)을 가져옵니다.
 			if (!mapToy.containsKey(age)) {// 해당 연령 키가 없으면 새 리스트를 생성하여 추가
+				
+				// 즉 만약 특정 연령의 키가 이미 mapToy에 존재한다면, 
+				//해당 키에 추가적으로 장난감을 넣어야 합니다. 
+				//그러나 키가 존재하지 않는다면, 
+				//먼저 해당 키를 초기화해야 이후에 장난감을 추가할 수 있습니다.
+				// ?
+ 
 				
 				mapToy.put(age,new ArrayList<Toy>());
 				//mapToy에 현재 연령(age) 키가 없는지 확인합니다. 없다면, 
@@ -359,7 +367,9 @@ public class ToyFactory2 {
 			mapToy.get(age).add(keyToy);// 해당 연령 리스트에 장난감 추가
 			//mapToy에서 현재 연령(age) 키에 해당하는 리스트를 가져와서,
 			//현재 장난감(keyToy)을 추가합니다.
-			
+			//mapToy에서 현재 연령 (age) 키에 해당하는 리스트를 가져와서, 
+			//현재 장난감 (keyToy)을 추가합니다.
+			//이 때, if 단계에서 키가 초기화 되어 있어야만 get(age) 메서드가 유효한 리스트를 반환할 수 있습니다.
 			
 			
 		}//mapToy의 각 항목을 순회하며 출력
@@ -382,6 +392,27 @@ public class ToyFactory2 {
 
 	}
 	
+	
+	/**
+	 * 재료를 추가하는 메서드
+	 */
+	public void addmate() {
+		
+		
+		
+		Set<Entry<Integer, String>> entry = materialMap.entrySet();
+		
+		System.out.println("현재 등럭되어있는 재료리스트");
+		for (Entry<Integer, String> entryy : materialMap.entrySet()) {
+			
+			System.out.println(entryy.getKey()+ ":"+ entryy.getValue() );
+			
+		}
+		System.out.println("입력할 재료를 문자열로 입력해주세요");
+		String input = sc.nextLine();
+		
+		
+	}
 	
 	
 	
